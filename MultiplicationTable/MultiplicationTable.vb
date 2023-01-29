@@ -33,12 +33,16 @@ Module MultiplicationTable
             End Select
 
             If userQuits = False Then
+                Console.WriteLine("")
+                Console.WriteLine($"Here is the multiplication table for {userNumber}.")
+                Console.WriteLine("")
                 For i As Integer = 1 To userNumber
                     For x As Integer = 1 To userNumber
-                        Console.Write(i * x & " ")
+                        Console.Write(String.Format("{0,5}", i * x))
                     Next
                     Console.WriteLine("")
                 Next
+                Console.WriteLine("")
             End If
         Loop
     End Sub
