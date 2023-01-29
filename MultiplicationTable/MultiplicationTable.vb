@@ -15,6 +15,8 @@ Module MultiplicationTable
         Dim userInput As String = ""
         Dim userNumber As Integer
         Dim userQuits As Boolean = False
+        Dim product As Integer
+        Dim displayTable As String
 
         Do Until userQuits = True
             Console.WriteLine("Please enter a whole number to see its entire multiplication table. Press " & Chr(34) & "Q" & Chr(34) & " at anytime to quit.")
@@ -29,6 +31,15 @@ Module MultiplicationTable
                         Console.WriteLine($"Sorry {userInput} isn't a valid whole number")
                     End Try
             End Select
+
+            If userQuits = False Then
+                For i As Integer = 1 To userNumber
+                    For x As Integer = 1 To userNumber
+                        Console.Write(i * x & " ")
+                    Next
+                    Console.WriteLine("")
+                Next
+            End If
         Loop
     End Sub
 End Module
