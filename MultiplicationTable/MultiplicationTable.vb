@@ -12,6 +12,23 @@ Imports System
 
 Module MultiplicationTable
     Sub Main(args As String())
+        Dim userInput As String = ""
+        Dim userNumber As Integer
+        Dim userQuits As Boolean = False
 
+        Do Until userQuits = True
+            Console.WriteLine("Please enter a whole number to see its entire multiplication table. Press " & Chr(34) & "Q" & Chr(34) & " at anytime to quit.")
+            userInput = (Console.ReadLine())
+            Select Case userInput
+                Case "Q"
+                    userQuits = True
+                Case Else
+                    Try
+                        userNumber = CInt(userInput)
+                    Catch ex As Exception
+                        Console.WriteLine($"Sorry {userInput} isn't a valid whole number")
+                    End Try
+            End Select
+        Loop
     End Sub
 End Module
